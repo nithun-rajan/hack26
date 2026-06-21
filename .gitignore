@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+*.log
+.vite
+
+# internal source material — keep out of the public repo
+content_to_send3.pdf
+*.pdf
