@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --deck: #0b0516; /* deep-purple deck background */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--deck);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #a78bfa;
+  color: #1e1035;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@layer components {
+  /* all-caps letter-spaced monospace eyebrow */
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-eyebrow text-violet-300/60;
+  }
+
+  /* sharp-cornered dark card — the retro system has zero border radius */
+  .card {
+    @apply border border-violet-400/20 bg-violet-500/[0.07];
+  }
+
+  /* pixel-dither "thumbnail" — checkerboard fading out */
+  .radial-thumb {
+    background-image: conic-gradient(
+      rgba(167, 139, 250, 0.28) 25%,
+      transparent 0 50%,
+      rgba(167, 139, 250, 0.28) 0 75%,
+      transparent 0
+    );
+    background-size: 4px 4px;
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 75%);
+    mask-image: radial-gradient(circle at center, black, transparent 75%);
+  }
+
+  /* pixel display type — no smoothing, no tight tracking */
+  .pixel {
+    font-family: var(--font-pixel), var(--font-mono), monospace;
+    font-weight: 500;
+    letter-spacing: 0;
+    -webkit-font-smoothing: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Pixel ship — hover choreography (rock, sail forward, waves, smoke)
+--------------------------------------------------------------------------- */
+.ship-hull,
+.ship-waves {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.ship-group:hover .ship-hull {
+  animation: ship-rock 1.4s ease-in-out infinite;
+}
+
+.ship-group .ship-waves {
+  animation: wave-drift 2.4s steps(2, end) infinite;
+}
+
+.ship-group:hover .ship-waves {
+  animation-duration: 0.8s;
+}
+
+.ship-smoke {
+  opacity: 0;
+}
+
+.ship-group:hover .ship-smoke {
+  opacity: 1;
+  animation: smoke-rise 1.2s steps(4, end) infinite;
+}
+
+@keyframes ship-rock {
+  0%,
+  100% {
+    transform: rotate(-1.2deg) translateY(0);
+  }
+  50% {
+    transform: rotate(1.2deg) translateY(-4px);
+  }
+}
+
+@keyframes wave-drift {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes smoke-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Boot power-on (title screen only)
+--------------------------------------------------------------------------- */
+.crt-boot {
+  animation: crt-on 0.5s ease-out;
+}
+
+@keyframes crt-on {
+  0% {
+    transform: scaleY(0.004) scaleX(1);
+    filter: brightness(4);
+    opacity: 0;
+  }
+  35% {
+    transform: scaleY(0.02) scaleX(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scaleY(1) scaleX(1);
+    filter: brightness(2);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+    filter: brightness(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-boot {
+    animation: none;
+  }
+}
+
+/* chunky square scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--deck);
+}
+::-webkit-scrollbar-thumb {
+  background: #3b2b5e;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #56419070;
+}

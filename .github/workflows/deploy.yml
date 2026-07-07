@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy SotonShip 26 (v3) to GitHub Pages
 
 on:
   push:
@@ -17,17 +17,23 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: v3
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+          cache-dependency-path: v3/package-lock.json
       - run: npm ci
       - run: npm run build
-      - uses: actions/configure-pages@v5
+        env:
+          NEXT_PUBLIC_BASE_PATH: /hack26
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: v3/out
 
   deploy:
     needs: build
