@@ -331,12 +331,15 @@ export const success = {
 export const sponsors = {
   eyebrow: "Backed by",
   title: "Our partners",
+  // `logo` is a filename in /public/sponsors; if the file is missing the grid
+  // falls back to showing the name as text.
   items: [
-    { name: "IET", note: "Main sponsor" },
-    { name: "Barclays", note: null },
-    { name: "True Money", note: null },
-    { name: "Southampton City Council", note: null },
-    { name: "Carbon GPT", note: null },
+    { name: "IET", note: "Main sponsor", logo: "iet.png" },
+    { name: "Responsible AI UK", note: null, logo: "rai-uk.png" },
+    { name: "Barclays", note: null, logo: "barclays.png" },
+    { name: "True Money", note: null, logo: "true-money.png" },
+    { name: "Southampton City Council", note: null, logo: "southampton-city-council.png" },
+    { name: "Carbon GPT", note: null, logo: "carbon-gpt.png" },
   ],
   cta: { label: "Become a sponsor / partner with us", href: "mailto:aisoc@soton.ac.uk" },
 } as const;
@@ -366,10 +369,4 @@ export const footer = {
   contacts: ["aisoc@soton.ac.uk", "Ivan.ling@soton.ac.uk"],
   org: "University of Southampton AI Society",
   eventLine: "Soton Ship 2026 · 16–18 October 2026 (Tentative) · Eagle Labs, Southampton, UK.",
-  socials: [
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Discord", href: "#" },
-    { label: "X", href: "#" },
-  ],
 } as const;

@@ -47,24 +47,6 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-
-              <div>
-                <p className="font-mono text-xs uppercase tracking-eyebrow text-violet-300/40">
-                  Follow
-                </p>
-                <ul className="mt-4 space-y-2">
-                  {footer.socials.map((s) => (
-                    <li key={s.label}>
-                      <a
-                        href={s.href}
-                        className="text-sm text-violet-200/70 transition-colors hover:text-white"
-                      >
-                        {s.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
 
