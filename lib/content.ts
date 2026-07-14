@@ -43,7 +43,7 @@ export const opportunity = {
     },
     {
       label: "The Audience",
-      body: "200+ student participants from UK universities — builders, founders and engineers entering the workforce 2027–2030.",
+      body: "150+ student participants from UK universities — builders, founders and engineers entering the workforce 2027–2030.",
     },
     {
       label: "Who it's for / What you'll leave with",
@@ -80,14 +80,14 @@ export const trackRecord = {
     { value: 150, suffix: "+", label: "student participants" },
     { value: 40, suffix: "+", label: "final submissions" },
     { value: 6, suffix: "", label: "industry mentors on-site" },
-    { value: 350, suffix: "+", label: "expected this year" },
+    { value: 150, suffix: "+", label: "expected this year" },
   ],
   quote: {
     text: "Easily the best weekend of my degree!",
     author: "Suleyman Cagatay",
     role: "Winner, IET–AISoc Hackathon 2024",
   },
-  note: "This year aims for the biggest yet — 350+ participants expected from across the UK.",
+  note: "This year aims for the biggest yet — 150+ participants expected from across the UK.",
 } as const;
 
 // 6. The Five Pillars
@@ -315,7 +315,7 @@ export const success = {
   eyebrow: "What success looks like",
   title: "The bar we're setting",
   stats: [
-    { value: 300, suffix: "+", label: "participants from Russell Group / Imperial / Oxbridge" },
+    { value: 150, suffix: "+", label: "participants from Russell Group / Imperial / Oxbridge" },
     { value: 10, suffix: "+", label: "partner universities" },
     { value: 30, suffix: "%", label: "first-time hackathon attendees" },
   ],
