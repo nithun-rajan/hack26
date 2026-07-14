@@ -1,9 +1,25 @@
-node_modules
-dist
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# misc
 .DS_Store
 *.log
-.vite
+npm-debug.log*
+*.pem
 
-# internal source material — keep out of the public repo
-content_to_send3.pdf
+# local env
+.env*.local
+
+# deploy
+.vercel
+
+# local source material — originals kept out of the public repo
+/_source-assets/
 *.pdf

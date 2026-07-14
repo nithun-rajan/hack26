@@ -19,7 +19,7 @@ export default function Sponsors() {
       <SectionHeading eyebrow={sponsors.eyebrow} title={sponsors.title} align="center" />
 
       <Reveal delay={0.1}>
-        <div className="mt-14 grid grid-cols-2 overflow-hidden border border-violet-400/20 sm:grid-cols-3 md:grid-cols-3">
+        <div className="mt-14 grid grid-cols-2 border border-violet-400/20 sm:grid-cols-3 md:grid-cols-3">
           {sponsors.items.map((s, i) => (
             <div
               key={s.name}
