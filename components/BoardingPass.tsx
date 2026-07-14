@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { boardingPass as bp } from "@/lib/content";
+import { boardingPass as bp, footer } from "@/lib/content";
 import { Section, SectionHeading, Reveal } from "./ui/primitives";
 
 export default function BoardingPass() {
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  // Placeholder handler — swap in a real backend / form provider here later.
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setSubmitted(true);
@@ -58,11 +57,20 @@ export default function BoardingPass() {
                   type="submit"
                   className="mt-9 w-full bg-white px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-violet-950 transition-colors hover:bg-violet-200"
                 >
-                  {submitted ? "✓ Aboard — see you in October!" : bp.cta}
+                  {submitted ? "⏳ In progress…" : bp.cta}
                 </button>
                 {submitted && (
-                  <p className="mt-3 text-center font-mono text-xs text-violet-300/60">
-                    Saved for {name || "passenger"}. (Demo — wire to a backend to issue real tickets.)
+                  <p className="mt-3 text-center font-mono text-xs leading-relaxed text-violet-300/60">
+                    In progress — please email the following to secure your boarding pass:
+                    <br />
+                    {footer.contacts.map((c, i) => (
+                      <span key={c}>
+                        {i > 0 && " · "}
+                        <a href={`mailto:${c}`} className="text-violet-200 underline hover:text-white">
+                          {c}
+                        </a>
+                      </span>
+                    ))}
                   </p>
                 )}
               </form>
