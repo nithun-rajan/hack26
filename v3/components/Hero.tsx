@@ -20,7 +20,8 @@ const MENU: { n: string; label: string; sub: string; href: string; sprite: Sprit
   { n: "02", label: "Five Pillars", sub: "Level select", href: "/pillars", sprite: "helm" },
   { n: "03", label: "The Manifest", sub: "3-day schedule", href: "/manifest", sprite: "map" },
   { n: "04", label: "The Backers", sub: "Sponsors & partners", href: "/sponsors", sprite: "anchor" },
-  { n: "05", label: "Boarding Pass", sub: "Claim your seat", href: "/boarding-pass", sprite: "ticket" },
+  { n: "05", label: "The Logbook", sub: "Last year aboard", href: "/logbook", sprite: "gull" },
+  { n: "06", label: "Boarding Pass", sub: "Claim your seat", href: "/boarding-pass", sprite: "ticket" },
 ];
 
 export default function Hero() {

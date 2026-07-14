@@ -1,12 +1,30 @@
 import { workshops } from "@/lib/content";
 import { Section, SectionHeading, Reveal } from "./ui/primitives";
+import Photo from "./ui/Photo";
 
 export default function Workshops() {
   return (
     <Section id="workshops" bordered>
       <SectionHeading eyebrow={workshops.eyebrow} title={workshops.title} />
 
-      <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <Reveal delay={0.08}>
+        <div className="mt-12 grid gap-3 sm:grid-cols-2">
+          <Photo
+            src="coding-workshop.jpg"
+            alt="Mentor walking through a live-coded dashboard"
+            caption="Live build-alongs"
+            className="h-52 md:h-60"
+          />
+          <Photo
+            src="workshop-floor.jpg"
+            alt="Students following a workshop in a lecture theatre"
+            caption="Full workshop floor"
+            className="h-52 md:h-60"
+          />
+        </div>
+      </Reveal>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {workshops.tracks.map((t, i) => (
           <Reveal key={t.track} delay={i * 0.05}>
             <article className="group card flex h-full flex-col p-7 transition-colors hover:border-violet-300/50 hover:bg-violet-500/[0.14]">

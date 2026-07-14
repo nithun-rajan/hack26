@@ -1,21 +1,21 @@
 import { Section, SectionHeading, Reveal } from "./ui/primitives";
+import Photo from "./ui/Photo";
 
-// Real event photography from last year aboard. Files live in /public/gallery.
-// `tall` tiles span two rows to keep the masonry rhythm; portrait shots go tall.
-// Plain <img> needs the GitHub Pages base path prefixed manually (next/image is
-// not used here — output is a static export with unoptimized images).
-const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-const tiles: { caption: string; src: string; tall?: boolean }[] = [
-  { caption: "Opening keynote", src: "keynote-hall.jpg", tall: true },
-  { caption: "Team-forming", src: "roundtable.jpg" },
-  { caption: "Workshop floor", src: "workshop-floor.jpg" },
-  { caption: "On the mic", src: "opening-talk.jpg", tall: true },
-  { caption: "Mentor check-ins", src: "mentor-demo.jpg" },
-  { caption: "Lightning talks", src: "lightning-talk.jpg" },
-  { caption: "The whole crew", src: "group-photo.jpg", tall: true },
-  { caption: "Networking floor", src: "networking.jpg" },
-  { caption: "Fuel stop", src: "pizza.jpg" },
+// Full event mosaic for the dedicated Logbook page. `tall` tiles span two rows
+// to keep the masonry rhythm; portrait / hero shots go tall.
+const tiles: { caption: string; src: string; alt: string; tall?: boolean }[] = [
+  { caption: "Opening keynote", src: "keynote-hall.jpg", alt: "Packed hall at the opening keynote", tall: true },
+  { caption: "Team-forming", src: "roundtable.jpg", alt: "Round-table team-forming session" },
+  { caption: "Workshop floor", src: "workshop-floor.jpg", alt: "Students in a workshop lecture theatre" },
+  { caption: "On the mic", src: "opening-talk.jpg", alt: "Organiser opening the event", tall: true },
+  { caption: "Live build-along", src: "coding-workshop.jpg", alt: "Mentor demoing a live-coded dashboard" },
+  { caption: "Industry keynote", src: "iet-talk.jpg", alt: "Industry speaker presenting" },
+  { caption: "The whole crew", src: "group-photo.jpg", alt: "The full cohort group photo", tall: true },
+  { caption: "Mentor check-ins", src: "mentor-demo.jpg", alt: "Small group at a demo screen" },
+  { caption: "Lightning talks", src: "lightning-talk.jpg", alt: "Speaker delivering a talk" },
+  { caption: "Heads-down hacking", src: "hacking-hall.jpg", alt: "Teams building in the lecture hall" },
+  { caption: "Networking floor", src: "networking.jpg", alt: "Participants networking" },
+  { caption: "Fuel stop", src: "pizza.jpg", alt: "Members grabbing pizza" },
 ];
 
 export default function Gallery() {
@@ -34,18 +34,7 @@ export default function Gallery() {
             delay={(i % 4) * 0.05}
             className={t.tall ? "row-span-2" : "row-span-1"}
           >
-            <div className="radial-thumb group relative flex h-full items-end overflow-hidden border border-violet-400/20 bg-violet-500/[0.08] transition-colors hover:border-violet-300/50">
-              <img
-                src={`${base}/gallery/${t.src}`}
-                alt={t.caption}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <span className="relative p-4 font-mono text-xs text-violet-100/90 transition-colors group-hover:text-white">
-                {t.caption}
-              </span>
-            </div>
+            <Photo src={t.src} alt={t.alt} caption={t.caption} className="h-full" />
           </Reveal>
         ))}
       </div>

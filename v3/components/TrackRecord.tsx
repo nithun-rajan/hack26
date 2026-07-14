@@ -1,5 +1,6 @@
 import { trackRecord } from "@/lib/content";
 import { Section, SectionHeading, Reveal, CountUp } from "./ui/primitives";
+import Photo from "./ui/Photo";
 
 export default function TrackRecord() {
   return (
@@ -19,8 +20,17 @@ export default function TrackRecord() {
         ))}
       </div>
 
+      <Reveal delay={0.08}>
+        <Photo
+          src="group-photo.jpg"
+          alt="Participants and organisers together at the previous hackathon"
+          caption="BT Hackathon '24 — the full house"
+          className="mt-10 h-64 w-full md:h-80"
+        />
+      </Reveal>
+
       <Reveal delay={0.1}>
-        <figure className="mt-10 border border-violet-400/20 bg-violet-500/[0.07] p-10 md:p-14">
+        <figure className="mt-6 border border-violet-400/20 bg-violet-500/[0.07] p-10 md:p-14">
           <blockquote className="font-pixel-circle text-2xl leading-snug md:text-4xl">
             “{trackRecord.quote.text}”
           </blockquote>

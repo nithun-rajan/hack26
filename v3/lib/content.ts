@@ -23,6 +23,7 @@ export const nav = {
     { label: "Pillars", href: "/pillars" },
     { label: "Manifest", href: "/manifest" },
     { label: "Backers", href: "/sponsors" },
+    { label: "Logbook", href: "/logbook" },
   ],
   cta: { label: "Get a Ticket", href: "/boarding-pass" },
 } as const;
