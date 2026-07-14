@@ -23,7 +23,7 @@ export default function Sponsors() {
           {sponsors.items.map((s, i) => (
             <div
               key={s.name}
-              className="group relative flex h-40 flex-col items-center justify-center gap-3 border-b border-r border-violet-400/20 px-6 text-center transition-colors hover:bg-violet-500/[0.08]"
+              className="group relative flex min-h-[13rem] flex-col items-center justify-center gap-4 border-b border-r border-violet-400/20 p-6 text-center transition-colors hover:bg-violet-500/[0.08]"
             >
               <HoverQuip
                 text={CREW[i % CREW.length].quip}
@@ -32,11 +32,16 @@ export default function Sponsors() {
               >
                 <SponsorLogo name={s.name} logo={s.logo} />
               </HoverQuip>
-              {s.note && (
-                <span className="border border-violet-400/25 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-violet-300/60">
-                  {s.note}
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-mono text-xs uppercase tracking-[0.14em] text-violet-100/85 transition-colors group-hover:text-white">
+                  {s.name}
                 </span>
-              )}
+                {s.note && (
+                  <span className="border border-violet-400/25 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-violet-300/60">
+                    {s.note}
+                  </span>
+                )}
+              </div>
             </div>
           ))}
         </div>

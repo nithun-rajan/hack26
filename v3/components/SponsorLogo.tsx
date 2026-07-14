@@ -13,17 +13,17 @@ export default function SponsorLogo({ name, logo }: { name: string; logo?: strin
   const showImage = logo && !broken;
 
   return (
-    <div className="flex h-20 w-full items-center justify-center bg-white px-5 transition-transform duration-200 group-hover:scale-[1.03]">
+    <div className="flex h-28 w-full items-center justify-center bg-white px-6 transition-transform duration-200 group-hover:scale-[1.03]">
       {showImage ? (
         <img
           src={`${base}/sponsors/${logo}`}
           alt={name}
           loading="lazy"
           onError={() => setBroken(true)}
-          className="max-h-12 w-auto max-w-full object-contain"
+          className="max-h-20 w-auto max-w-[90%] object-contain"
         />
       ) : (
-        <span className="text-center text-sm font-semibold text-violet-950">{name}</span>
+        <span className="text-center text-lg font-semibold text-violet-950">{name}</span>
       )}
     </div>
   );
