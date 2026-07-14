@@ -77,17 +77,17 @@ export const trackRecord = {
   eyebrow: "Track record",
   title: "What happened in 2024",
   stats: [
-    { value: 80, suffix: "+", label: "student participants" },
-    { value: 14, suffix: "", label: "final submissions" },
+    { value: 150, suffix: "+", label: "student participants" },
+    { value: 40, suffix: "+", label: "final submissions" },
     { value: 6, suffix: "", label: "industry mentors on-site" },
-    { value: 95, suffix: "%", label: "said they'd attend again" },
+    { value: 350, suffix: "+", label: "expected this year" },
   ],
   quote: {
     text: "Easily the best weekend of my degree!",
     author: "Suleyman Cagatay",
     role: "Winner, IET–AISoc Hackathon 2024",
   },
-  note: "This year aims for the biggest yet — 200+ participants from across the UK.",
+  note: "This year aims for the biggest yet — 350+ participants expected from across the UK.",
 } as const;
 
 // 6. The Five Pillars
