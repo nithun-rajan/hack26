@@ -25,7 +25,11 @@ export default function Sponsors() {
               key={s.name}
               className="group relative flex h-40 flex-col items-center justify-center gap-3 border-b border-r border-violet-400/20 px-6 text-center transition-colors hover:bg-violet-500/[0.08]"
             >
-              <HoverQuip text={CREW[i % CREW.length].quip} sprite={CREW[i % CREW.length].sprite}>
+              <HoverQuip
+                text={CREW[i % CREW.length].quip}
+                sprite={CREW[i % CREW.length].sprite}
+                className="w-full"
+              >
                 <SponsorLogo name={s.name} logo={s.logo} />
               </HoverQuip>
               {s.note && (

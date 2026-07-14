@@ -315,7 +315,7 @@ export const success = {
   eyebrow: "What success looks like",
   title: "The bar we're setting",
   stats: [
-    { value: 200, suffix: "+", label: "participants from Russell Group / Imperial / Oxbridge" },
+    { value: 300, suffix: "+", label: "participants from Russell Group / Imperial / Oxbridge" },
     { value: 10, suffix: "+", label: "partner universities" },
     { value: 30, suffix: "%", label: "first-time hackathon attendees" },
   ],
@@ -334,9 +334,9 @@ export const sponsors = {
   // `logo` is a filename in /public/sponsors; if the file is missing the grid
   // falls back to showing the name as text.
   items: [
-    { name: "IET", note: "Main sponsor", logo: "iet.png" },
+    { name: "IET", note: "Main sponsor", logo: "iet.svg" },
     { name: "Responsible AI UK", note: null, logo: "rai-uk.png" },
-    { name: "Barclays", note: null, logo: "barclays.png" },
+    { name: "Barclays", note: null, logo: "barclays.svg" },
     { name: "True Money", note: null, logo: "true-money.png" },
     { name: "Southampton City Council", note: null, logo: "southampton-city-council.png" },
     { name: "Carbon GPT", note: null, logo: "carbon-gpt.png" },
